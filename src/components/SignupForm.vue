@@ -26,7 +26,6 @@
           <option>MALE</option>
           <option>FEMAIL</option>
         </select>
-        <span>선택함: {{ genderType }}</span>
         </div>
         <div>
           <label for="handType">주로 사용하는 손: </label>
@@ -35,7 +34,6 @@
           <option>LEFT</option>
           <option>RIGHT</option>
         </select>
-                <span>선택함: {{ handType }}</span>
         </div>
         <button
           :disabled="!isUsernameValid || !password || !genderType || !handType || !name"

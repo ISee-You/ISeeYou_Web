@@ -54,7 +54,9 @@ export default {
           email: this.email,
           password: this.password,
         };
-        await loginUser(userData);
+        const {data} = await loginUser(userData);
+        this.$store.commit('setUsername', this.email)
+
         this.$router.push('/main');
       } catch (error) {
         // 에러 핸들링할 코드

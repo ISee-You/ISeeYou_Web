@@ -3,10 +3,10 @@
     <div class="form-wrapper form-wrapper-sm">
       <form @submit.prevent="submitForm" class="form">
         <div>
-          <label for="username">id:</label>
-          <input id="username" type="text" v-model="username" />
+          <label for="email">id:</label>
+          <input id="email" type="text" v-model="email" />
           <p class="validation-text">
-            <span class="warning" v-if="!isUsernameValid && username">
+            <span class="warning" v-if="!isUsernameValid && email">
               Please enter an email address
             </span>
           </p>
@@ -30,20 +30,20 @@
 
 <script>
 import { validateEmail } from '@/utils/validation';
+import { loginUser } from '@/api/auth';
 
 export default {
   data() {
     return {
       // form values
-      username: '',
+      email: '',
       password: '',
-      // log
       logMessage: '',
     };
   },
   computed: {
     isUsernameValid() {
-      return validateEmail(this.username);
+      return validateEmail(this.email);
     },
   },
   methods: {
@@ -51,10 +51,10 @@ export default {
       try {
         // 비즈니스 로직
         const userData = {
-          username: this.username,
+          email: this.email,
           password: this.password,
         };
-        await this.$store.dispatch('LOGIN', userData);
+        await loginUser(userData);
         this.$router.push('/main');
       } catch (error) {
         // 에러 핸들링할 코드
@@ -65,7 +65,7 @@ export default {
       }
     },
     initForm() {
-      this.username = '';
+      this.email = '';
       this.password = '';
     },
   },

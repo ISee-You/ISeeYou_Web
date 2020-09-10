@@ -22,7 +22,7 @@ export default new VueRouter({
     },
     {
       path: '/main',
-      component: () => import('@/views/MainPage.vue'),
+      component: () => import('@/views/TestMainPage.vue'),
     },
     {
       path: '/add',

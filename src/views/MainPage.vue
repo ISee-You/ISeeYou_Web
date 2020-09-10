@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main list-container contents">
-      <h1 class="page-header">Today I Learned</h1>
+      <h1 class="page-header">{{ $store.state.username }}'s main</h1>
       <LoadingSpinner v-if="isLoading"></LoadingSpinner>
       <ul v-else>
         <PostListItem
@@ -21,7 +21,6 @@
 <script>
 import PostListItem from '@/components/posts/PostListItem.vue';
 import LoadingSpinner from '@/components/common/LoadingSpinner.vue';
-import { fetchPosts } from '@/api/posts';
 
 export default {
   components: {

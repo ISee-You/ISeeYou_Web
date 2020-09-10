@@ -6,6 +6,10 @@ function saveUserToCookie(value) {
   document.cookie = `til_user=${value}`;
 }
 
+function saveIdToCookie(value) {
+  document.cookie = `til_id=${value}`;
+}
+
 function getAuthFromCookie() {
   return document.cookie.replace(
     /(?:(?:^|.*;\s*)til_auth\s*=\s*([^;]*).*$)|^.*$/,
@@ -20,6 +24,13 @@ function getUserFromCookie() {
   );
 }
 
+function getIdFromCookie() {
+  return document.cookie.replace(
+    /(?:(?:^|.*;\s*)til_id\s*=\s*([^;]*).*$)|^.*$/,
+    '$1',
+  );
+}
+
 function deleteCookie(value) {
   document.cookie = `${value}=; expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
 }
@@ -30,4 +41,7 @@ export {
   getAuthFromCookie,
   getUserFromCookie,
   deleteCookie,
+  saveIdToCookie,
+  getIdFromCookie,
+
 };

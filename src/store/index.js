@@ -3,12 +3,14 @@ import Vuex from 'vuex';
 import {
   getAuthFromCookie,
   getUserFromCookie,
+  getIdFromCookie,
 } from '@/utils/cookies';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    id: getIdFromCookie() || '',
     username: getUserFromCookie() || '',
     token: getAuthFromCookie() || '',
   },
@@ -18,6 +20,13 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    setId(state, id){
+      state.id = id;
+    },
+    clearId(state){
+      state.id = '';
+    },
+
     setUsername(state, username) {
       state.username = username;
     },
@@ -26,6 +35,9 @@ export default new Vuex.Store({
     },
     setToken(state, token) {
       state.token = token;
+    },
+    clearToken(state) {
+      state.token = '';
     },
   },
 });

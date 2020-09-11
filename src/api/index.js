@@ -20,6 +20,7 @@ function createInstanceWithAuth(url) {
 
 export const instance = createInstance();
 export const posts = createInstanceWithAuth('posts');
+export const users = createInstanceWithAuth('api/v1/stduents');
 
 // CREATE - posts
 // POST - posts

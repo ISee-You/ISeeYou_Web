@@ -2,13 +2,14 @@
   <header>
     <div>
       <router-link to="/" class="logo">
-        TIL
+        ISeeYou
         <span v-if="isUserLogin">by {{ $store.state.username }}</span>
       </router-link>
     </div>
     <div class="navigations">
       <!-- 1 -->
       <template v-if="isUserLogin">
+        
         <a href="javascript:;" @click="logoutUser" class="logout-button">
           Logout
         </a>

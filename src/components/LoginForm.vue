@@ -31,6 +31,12 @@
 <script>
 import { validateEmail } from '@/utils/validation';
 import { loginUser } from '@/api/auth';
+import {
+  getIdFromCookie,
+  getUserFromCookie,
+  saveIdToCookie,
+  saveUserToCookie,
+} from '@/utils/cookies';
 
 export default {
   data() {
@@ -58,6 +64,8 @@ export default {
         this.$store.commit('setUsername', data.email);
         this.$store.commit('setId', data.id);
         this.$router.push('/main');
+        saveUserToCookie(data.email);
+        saveIdToCookie(data.id);
         console.log(this.$store.id);
       } catch (error) {
         // 에러 핸들링할 코드

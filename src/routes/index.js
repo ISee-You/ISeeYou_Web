@@ -25,6 +25,10 @@ export default new VueRouter({
       component: () => import('@/views/TestMainPage.vue'),
     },
     {
+      path: '/student/profile',
+      component: () => import('@/views/UserDetailPage.vue'),
+    },
+    {
       path: '/add',
       component: () => import('@/views/PostAddPage.vue'),
     },

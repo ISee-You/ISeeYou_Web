@@ -2,7 +2,8 @@
   <header>
     <div>
       <router-link to="/" class="logo">
-        ISeeYou
+        <img src="../../assets/logo.png" class="logo">
+
         <span v-if="isUserLogin">by {{ $store.state.username }}</span>
       </router-link>
     </div>
@@ -16,8 +17,7 @@
       </template>
       <!-- 2 -->
       <template v-else>
-        <router-link to="/login">로그인</router-link>
-        <router-link to="/signup">회원가입</router-link>
+
       </template>
     </div>
   </header>
@@ -49,18 +49,18 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #927dfc;
+  background-color: white;
   z-index: 2;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
 }
 a {
-  color: #dedede;
+  color: gray;
   font-size: 18px;
 }
 a.logo {
   font-size: 30px;
   font-weight: 900;
-  color: white;
+  color: gray;
 }
 .logo > span {
   font-size: 14px;
@@ -78,7 +78,7 @@ a.logo {
   font-size: 14px;
 }
 a.router-link-exact-active {
-  color: white;
+  color: gray;
   font-weight: bold;
 }
 </style>

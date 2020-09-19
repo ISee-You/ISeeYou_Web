@@ -3,44 +3,19 @@
     <div class="form-wrapper form-wrapper-sm">
       <form @submit.prevent="submitForm" class="form">
         <div>
-          <label for="email">email: </label>
-          <input id="email" type="text" v-model="email" />
-           <p class="validation-text">
-            <span class="warning" v-if="!isUsernameValid && email">
-              Please enter an email address
-            </span>
-          </p>
-        </div>
-        <div>
-          <label for="password">pw: </label>
+          <label for="password">이메일: </label>
           <input id="password" type="text" v-model="password" />
         </div>
         <div>
-          <label for="name">이름: </label>
+          <label for="name">전화번호: </label>
           <input id="name" type="text" v-model="name" />
         </div>
-        <div>
-          <label for="genderType">성별: </label>
-           <select v-model="genderType" class="form input">
-           <option disabled value="">Please select one</option>
-          <option>MALE</option>
-          <option>FEMAIL</option>
-        </select>
-        </div>
-        <div>
-          <label for="handType">주로 사용하는 손: </label>
-           <select v-model="handType" class="form input">
-           <option disabled value="">Please select one</option>
-          <option>LEFT</option>
-          <option>RIGHT</option>
-        </select>
-        </div>
         <button
-          :disabled="!isUsernameValid || !password || !genderType || !handType || !name"
+          :disabled="!password|| !name"
           type="submit"
           class="btn"
         >
-          회원가입
+          인증하기
         </button>
       </form>
       <p class="log">{{ logMessage }}</p>
@@ -58,9 +33,6 @@ export default {
       // form values
       email: '',
       password: '',
-      name: '',
-      genderType: '',
-      handType: '',
       // log
       logMessage: '',
     };
@@ -74,11 +46,8 @@ export default {
     async submitForm() {
       try{
       const userData = {
-        email: this.email,
         password: this.password,
         name: this.name,
-        genderType: this.genderType,
-        handType: this.handType,
       };
       await registerUser(userData);
       console.log(userData.name);
@@ -91,11 +60,8 @@ export default {
       }
     },
     initForm() {
-      this.email = '';
       this.password = '';
       this.name = '';
-      this.genderType = '';
-      this.handType = '';
     },
   },
 };

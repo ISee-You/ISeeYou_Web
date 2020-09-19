@@ -1,6 +1,7 @@
 <template>
   <div class="contents">
     <div class="form-wrapper form-wrapper-sm">
+    
       <form @submit.prevent="submitForm" class="form">
         <div>
           <label for="email">id:</label>

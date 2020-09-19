@@ -35,7 +35,7 @@ a:hover {
 .page-header {
   font-size: 45px;
 	font-weight: 600;
-	color: #456155;
+	color: black;
 	padding: 30px 5px 15px;
 }
 
@@ -97,7 +97,7 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 .btn {
-  background: #FE9616;
+  background: blue;
   padding: 0.5rem 1.5rem;
   font-weight: 700;
   border-radius: .25rem;

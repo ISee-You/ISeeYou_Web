@@ -11,6 +11,7 @@
           <input id="name" type="text" v-model="name" />
         </div>
         <button
+          :disabled="!password || !name"
           type="submit"
           class="btn"
         >
@@ -47,7 +48,7 @@ export default {
       };
       await registerUser(userData);
       console.log(userData.name);
-      this.logMessage = `${userData.name} 님이 가입되었습니다`;
+      this.logMessage = `정상 인증 되었습니다.`;
       } catch( error ){
         console.log(error.response.data);
         this.logMessage = error.response.data;

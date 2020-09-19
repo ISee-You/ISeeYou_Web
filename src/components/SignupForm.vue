@@ -31,16 +31,13 @@ export default {
   data() {
     return {
       // form values
-      email: '',
+      name: '',
       password: '',
       // log
       logMessage: '',
     };
   },
    computed: {
-    isUsernameValid() {
-      return validateEmail(this.email);
-    },
   },
   methods: {
     async submitForm() {

@@ -11,12 +11,10 @@
 </template>
 
 <script>
-import LoginForm from '@/components/LoginForm.vue';
 import SignupForm from '@/components/SignupForm.vue';
 
 export default {
   components: {
-    LoginForm,
     SignupForm,
   },
 };

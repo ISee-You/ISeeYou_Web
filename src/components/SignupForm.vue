@@ -11,7 +11,6 @@
           <input id="name" type="text" v-model="name" />
         </div>
         <button
-          :disabled="!password|| !name"
           type="submit"
           class="btn"
         >
@@ -31,8 +30,8 @@ export default {
   data() {
     return {
       // form values
-      name: '',
       password: '',
+      name: '',
       // log
       logMessage: '',
     };
